@@ -4471,7 +4471,6 @@ input[type="range"]::-moz-range-progress {
   border: 1px solid transparent;
 }
 
-/*  */
 
 .moonloader {
   backdrop-filter: blur(3px);
