@@ -37,7 +37,7 @@ import {
 import { toast } from "react-toastify";
 import Wishlistinform from "../wshlistData/wishlistDataInfo";
 import { FaCamera } from "react-icons/fa6";
-import { apiBasePath } from "../../../Redux/config/Config";
+import { proBasePath } from "../../../Redux/config/Config";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -212,15 +212,15 @@ export default function Profile() {
             <Col lg={3} md={3} sm={4}>
               <div className="d-flex justify-content-center mainiconalign">
                 <div className="mainiconalign">
-                  {console.log(
+                  {/* {console.log(
                     imgFound(
-                      `${apiBasePath}/profile/${profilegetdata?.Profileimage}`
+                      `${proBasePath}/${profilegetdata?.Profileimage}`
                     ),
                     "goiwjep"
-                  )}
+                  )} */}
                   {profilegetdata?.Profileimage &&
                   imgFound(
-                    `${apiBasePath}/profile/${profilegetdata?.Profileimage}`
+                    `${proBasePath}/${profilegetdata?.Profileimage}`
                   ) ? (
                     <>
                       <img
@@ -229,7 +229,7 @@ export default function Profile() {
                         src={
                           profilegetdata &&
                           profilegetdata.Profileimage &&
-                          `${apiBasePath}/profile/${profilegetdata.Profileimage}`
+                          `${proBasePath}/${profilegetdata.Profileimage}`
                         }
                         alt="no img found"
                       />
