@@ -8,7 +8,7 @@ export const axiosInstance = axios.create({
 
 // export const AllFilterationData = AllFilterationData("filterationAlldata",
 //   async (payload) => {
-//     const data1 = await axiosInstance.post(`/filteralldata`, payload);    // http://localhost:5000/api/filteralldata
+//     const data1 = await axiosInstance.post(`/filteralldata`, payload);    // ${apiBasePath}api/filteralldata
 //     return data1.data;
 //   }
 // );

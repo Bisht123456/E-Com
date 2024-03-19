@@ -10,6 +10,7 @@ import {
 } from "../../../../Redux/action/orderSummary";
 import Spinner from "../../loader/spinner";
 import { useNavigate, useParams } from "react-router-dom";
+import { apiBasePath } from "../../../../Redux/config/Config";
 const OrderConfirmation = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -118,7 +119,7 @@ const OrderConfirmation = () => {
                                 className="customer_detail"
                                 src={
                                   item?.productID[0]?.thumbnail
-                                    ? `http://localhost:5000/uploads/${item?.productID[0]?.thumbnail}`
+                                    ? `${apiBasePath}uploads/${item?.productID[0]?.thumbnail}`
                                     : ""
                                 }
                                 alt=""

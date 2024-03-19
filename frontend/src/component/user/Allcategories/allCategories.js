@@ -5,6 +5,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { allSubCategoryList } from "../../../Redux/action/getSubcategoryAction";
 import { AllFilterationData } from "../../../Redux/action/allFilterationAction";
+import { apiBasePath } from "../../../Redux/config/Config";
 
 const AllCategories = () => {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ const AllCategories = () => {
                                 >
                                   <img
                                     className="topcatimage_home align-imgcat"
-                                    src={`http://localhost:5000/categoryimg/${item.images}`}
+                                    src={`${apiBasePath}categoryimg/${item.images}`}
                                     alt=""
                                   />
                                 </div>

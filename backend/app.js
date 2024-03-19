@@ -53,7 +53,7 @@ server.use("/api", loginRoutes);
 server.use("/api", postProductRouters);
 server.use("/uploads", express.static("uploads"));
 
-// http://localhost:5000/uploads/1693806012738-Capture.PNG
+// ${apiBasePath}uploads/1693806012738-Capture.PNG
 server.use("/categoryimg", express.static("categoryimg"));
 server.use("/logo", express.static("logo"));
 
@@ -74,7 +74,7 @@ server.use("/api", wishList);
 server.use("/api", headerforuser);
 server.use("/api", sliderRoutes);
 
-// http://localhost:5000/profile
+// ${apiBasePath}profile
 
 ////25/08
 server.post("/api/Search", async (req, res) => {
@@ -143,7 +143,7 @@ const uploadForImages = multer({
 
 // get slider images
 server.use("/slider", express.static("slider"));
-// http://localhost:5000/uploads/1693806012738-Capture.PNG
+// ${apiBasePath}uploads/1693806012738-Capture.PNG
 
 server.post("/api/Getslider", async (req, resp) => {
   try {

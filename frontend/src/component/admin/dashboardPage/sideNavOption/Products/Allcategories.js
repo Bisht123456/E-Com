@@ -14,6 +14,7 @@ import Allpagination from "../../../Pagination/pagination";
 import Delete from "../../../deleteModel/delete";
 import { FiSearch } from "react-icons/fi";
 import { CiEdit } from "react-icons/ci";
+import { apiBasePath } from "../../../../../Redux/config/Config";
 
 const Allcategories = () => {
   const [selectedImagesforpost, setselectedImagesforpost] = useState();
@@ -301,7 +302,7 @@ const Allcategories = () => {
                               <li className=" productupload_item col-md-3">
                                 <img
                                   className="categorygetimage"
-                                  src={`http://localhost:5000/categoryimg/${edit?.images}`}
+                                  src={`${apiBasePath}categoryimg/${edit?.images}`}
                                   crossOrigin="anonymous"
                                   alt=""
                                 />
@@ -391,7 +392,7 @@ const Allcategories = () => {
                                 <td>
                                   <img
                                     className="tableget_image"
-                                    src={`http://localhost:5000/categoryimg/${e?.images}`}
+                                    src={`${apiBasePath}categoryimg/${e?.images}`}
                                     crossOrigin="anonymous"
                                   />
                                 </td>

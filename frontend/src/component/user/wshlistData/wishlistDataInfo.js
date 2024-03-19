@@ -20,6 +20,7 @@ import {
 } from "../../../Redux/action/wishlistAction";
 import { getUserId } from "../../../utils/auth";
 import { MdDelete } from "react-icons/md";
+import { apiBasePath } from "../../../Redux/config/Config";
 
 const Wishlistinform = () => {
   const dispatch = useDispatch();
@@ -95,7 +96,7 @@ const Wishlistinform = () => {
                                     : item.products[0]?.thumbnail?.split(":")
                                         ?.length > 1
                                     ? item.products[0]?.thumbnail
-                                    : `http://localhost:5000/uploads/${item?.products[0]?.thumbnail}`
+                                    : `${apiBasePath}uploads/${item?.products[0]?.thumbnail}`
                                 }
                                 alt=""
                               />
@@ -117,7 +118,7 @@ const Wishlistinform = () => {
                                     : item.products[0]?.thumbnail?.split(":")
                                         ?.length > 1
                                     ? item.products[0]?.thumbnail
-                                    : `http://localhost:5000/uploads/${item?.products[0]?.thumbnail}`
+                                    : `${apiBasePath}uploads/${item?.products[0]?.thumbnail}`
                                 }
                                 alt=""
                               />

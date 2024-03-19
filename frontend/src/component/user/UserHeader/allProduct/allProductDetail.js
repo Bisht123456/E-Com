@@ -15,6 +15,7 @@ import {
 } from "../../../../Redux/action/wishlistAction";
 import { getUserId } from "../../../../utils/auth";
 import Scrolltotopbutton from "../../ScoolToTop/scrolltotopbutton";
+import { apiBasePath } from "../../../../Redux/config/Config";
 // import Wishlistmaincomponent from "../../wshlistData/wishlistmaincomponent"
 
 const AllProductDetail = () => {
@@ -196,7 +197,7 @@ const AllProductDetail = () => {
                                         ? e?.image
                                         : e?.thumbnail?.split(":").length > 1
                                         ? e?.thumbnail
-                                        : `http://localhost:5000/uploads/${e?.thumbnail}`
+                                        : `${apiBasePath}uploads/${e?.thumbnail}`
                                     }
                                   />
                                 </div>

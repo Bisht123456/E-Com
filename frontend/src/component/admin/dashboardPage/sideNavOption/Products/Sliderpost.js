@@ -16,6 +16,7 @@ import { toast } from "react-toastify";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { LuClipboardEdit } from "react-icons/lu";
 import Delete from "../../../deleteModel/delete";
+import { apiBasePath } from "../../../../../Redux/config/Config";
 
 const Sliderpost = () => {
   const [selectedImagesforpost, setselectedImagesforpost] = useState();
@@ -281,7 +282,7 @@ const Sliderpost = () => {
                         <div className="margin_bottom">
                           <img
                             className="slideradmin_View"
-                            src={`http://localhost:5000/slider/${edit?.images[0]}`}
+                            src={`${apiBasePath}slider/${edit?.images[0]}`}
                             alt="Second sslide"
                           />
                         </div>
@@ -328,7 +329,7 @@ const Sliderpost = () => {
                       <div className="margin_bottom">
                         <img
                           className="slideradmin_View"
-                          src={`http://localhost:5000/slider/${item?.images[0]}`}
+                          src={`${apiBasePath}slider/${item?.images[0]}`}
                           alt="Second sslide"
                         />
                       </div>

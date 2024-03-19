@@ -9,6 +9,7 @@ import SubCategoryfilter from "./subCategoryfilter";
 import { AllFilterationData } from "../../../Redux/action/allFilterationAction";
 import { BsFillHeartFill } from "react-icons/bs";
 import Spinner from "../loader/spinner";
+import { apiBasePath } from "../../../Redux/config/Config";
 
 const Homecategory = () => {
   // const { subcategoryid } = props;
@@ -125,7 +126,7 @@ const Homecategory = () => {
                                           : item?.thumbnail?.split(":").length >
                                             1
                                           ? item?.thumbnail
-                                          : `http://localhost:5000/uploads/${item.thumbnail}`
+                                          : `${apiBasePath}uploads/${item.thumbnail}`
                                       }
                                       alt=""
                                     />
@@ -181,7 +182,7 @@ const Homecategory = () => {
                                           : item?.thumbnail?.split(":").length >
                                             1
                                           ? item?.thumbnail
-                                          : `http://localhost:5000/uploads/${item.thumbnail}`
+                                          : `${apiBasePath}uploads/${item.thumbnail}`
                                       }
                                       alt=""
                                     />

@@ -6,6 +6,7 @@ import { allCategoryList } from "../../../Redux/action/getCategoryAction";
 import Subcategorymobilefilter from "../filterbyCategory/SubcaregoryMobilefilter";
 import SubCategoryfilter from "../filterbyCategory/subCategoryfilter";
 import Spinner from "../loader/spinner";
+import { apiBasePath } from "../../../Redux/config/Config";
 
 const Onlymobile = () => {
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ const Onlymobile = () => {
                                         ? item?.image
                                         : item?.thumbnail?.split(":").length > 1
                                         ? item?.thumbnail
-                                        : `http://localhost:5000/uploads/${item.thumbnail}`
+                                        : `${apiBasePath}uploads/${item.thumbnail}`
                                     }
                                   />
                                 </div>
