@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { allCategoryList } from "../../../../Redux/action/getCategoryAction";
 import Spinner from "../../loader/spinner";
 import { Link } from "react-router-dom";
-import { apiBasePath } from "../../../../Redux/config/Config";
+import { apiBasePath, uploadBasePath } from "../../../../Redux/config/Config";
 
 const SliderPages = () => {
   const dispatch = useDispatch();
@@ -47,7 +47,7 @@ const SliderPages = () => {
                                         ? item?.image
                                         : item?.thumbnail?.split(":").length > 1
                                         ? item?.thumbnail
-                                        : `${apiBasePath}/uploads/${item.thumbnail}`
+                                        : `${uploadBasePath}/${item.thumbnail}`
                                     }
                                   />
                                 </div>
@@ -87,7 +87,7 @@ const SliderPages = () => {
                                         ? item?.image
                                         : item?.thumbnail?.split(":").length > 1
                                         ? item?.thumbnail
-                                        : `${apiBasePath}/uploads/${item.thumbnail}`
+                                        : `${uploadBasePath}/${item.thumbnail}`
                                     }
                                   />
                                 </div>
