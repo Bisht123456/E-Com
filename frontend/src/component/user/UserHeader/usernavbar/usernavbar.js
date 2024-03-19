@@ -22,7 +22,7 @@ import { cartinfo } from "../../../../Redux/action/usercartinfo";
 import { admingetheading } from "../../../../Redux/action/adminheader";
 import { CiLight } from "react-icons/ci";
 import { AllFilterationData } from "../../../../Redux/action/allFilterationAction";
-import { apiBasePath } from "../../../../Redux/config/Config";
+import { apiBasePath, logoBasePath } from "../../../../Redux/config/Config";
 
 const Usernavbar = () => {
   const navigate = useNavigate();
@@ -149,7 +149,7 @@ const Usernavbar = () => {
                         "asdasdq234234324"
                       )}
                       <img
-                        src={`${apiBasePath}logo/${header?.logo}`}
+                        src={`${apiBasePath}/logo/${header?.logo}`}
                         alt=""
                         style={{ width: "92px" }}
                       />
@@ -164,7 +164,7 @@ const Usernavbar = () => {
                               "asdasdq234234324"
                             )}
                             <img
-                              src={`${apiBasePath}logo/${header?.logo}`}
+                              src={`${logoBasePath}/${header?.logo}`}
                               alt=""
                               style={{ width: "92px" }}
                             />

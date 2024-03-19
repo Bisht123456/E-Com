@@ -23,7 +23,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { apiBasePath } from "../../../Redux/config/Config";
+import { uploadBasePath } from "../../../Redux/config/Config";
 // import Wishlistmaincomponent from "../../wshlistData/wishlistmaincomponent";
 
 const ProductDetails = () => {
@@ -110,7 +110,7 @@ const ProductDetails = () => {
                                 src={
                                   item?.split("https").length > 1
                                     ? item
-                                    : `${apiBasePath}uploads/${item}`
+                                    : `${uploadBasePath}/${item}`
                                 }
                                 onMouseEnter={() => setImageState(item)}
                                 alt=""
@@ -136,21 +136,21 @@ const ProductDetails = () => {
                           src: imageState
                             ? imageState?.split("http").length > 1
                               ? imageState
-                              : `${apiBasePath}uploads/${imageState}`
+                              : `${uploadBasePath}/${imageState}`
                             : productDetail?.images?.length > 0 &&
                               (productDetail?.images[0].split("http").length > 1
                                 ? productDetail?.images[0]
-                                : `${apiBasePath}uploads/${productDetail?.images[0]}`),
+                                : `${uploadBasePath}/${productDetail?.images[0]}`),
                         },
                         largeImage: {
                           src: imageState
                             ? imageState?.split("http").length > 1
                               ? imageState
-                              : `${apiBasePath}uploads/${imageState}`
+                              : `${uploadBasePath}/${imageState}`
                             : productDetail?.images?.length > 0 &&
                               (productDetail?.images[0].split("http").length > 1
                                 ? productDetail?.images[0]
-                                : `${apiBasePath}uploads/${productDetail?.images[0]}`),
+                                : `${uploadBasePath}/${productDetail?.images[0]}`),
                           width: 1200,
                           height: 1800,
                         },
@@ -178,7 +178,7 @@ const ProductDetails = () => {
                                   src={
                                     item?.split("https").length > 1
                                       ? item
-                                      : `${apiBasePath}uploads/${item}`
+                                      : `${uploadBasePath}${item}`
                                   }
                                   onMouseEnter={() => setImageState(item)}
                                   alt=""
@@ -359,7 +359,7 @@ const ProductDetails = () => {
                                         ? item?.image
                                         : item?.thumbnail?.split(":").length > 1
                                         ? item?.thumbnail
-                                        : `${apiBasePath}uploads/${item.thumbnail}`
+                                        : `${uploadBasePath}/${item.thumbnail}`
                                     }
                                     alt=""
                                   />

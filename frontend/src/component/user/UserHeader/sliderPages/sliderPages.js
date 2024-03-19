@@ -47,7 +47,7 @@ const SliderPages = () => {
                                         ? item?.image
                                         : item?.thumbnail?.split(":").length > 1
                                         ? item?.thumbnail
-                                        : `${apiBasePath}uploads/${item.thumbnail}`
+                                        : `${apiBasePath}/uploads/${item.thumbnail}`
                                     }
                                   />
                                 </div>
@@ -87,7 +87,7 @@ const SliderPages = () => {
                                         ? item?.image
                                         : item?.thumbnail?.split(":").length > 1
                                         ? item?.thumbnail
-                                        : `${apiBasePath}uploads/${item.thumbnail}`
+                                        : `${apiBasePath}/uploads/${item.thumbnail}`
                                     }
                                   />
                                 </div>

@@ -214,13 +214,13 @@ export default function Profile() {
                 <div className="mainiconalign">
                   {console.log(
                     imgFound(
-                      `${apiBasePath}profile/${profilegetdata?.Profileimage}`
+                      `${apiBasePath}/profile/${profilegetdata?.Profileimage}`
                     ),
                     "goiwjep"
                   )}
                   {profilegetdata?.Profileimage &&
                   imgFound(
-                    `${apiBasePath}profile/${profilegetdata?.Profileimage}`
+                    `${apiBasePath}/profile/${profilegetdata?.Profileimage}`
                   ) ? (
                     <>
                       <img
@@ -229,7 +229,7 @@ export default function Profile() {
                         src={
                           profilegetdata &&
                           profilegetdata.Profileimage &&
-                          `${apiBasePath}profile/${profilegetdata.Profileimage}`
+                          `${apiBasePath}/profile/${profilegetdata.Profileimage}`
                         }
                         alt="no img found"
                       />
