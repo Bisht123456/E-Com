@@ -1,4 +1,4 @@
 module.exports = {
-  // apiBasePath: "https://fakestoreapi.com",
-  apiBasePath: "http://localhost:5000/api",
+  apiBasePath: "https://e-com-jor5.onrender.com",
+  // apiBasePath: "http://localhost:5000/api",
 };
