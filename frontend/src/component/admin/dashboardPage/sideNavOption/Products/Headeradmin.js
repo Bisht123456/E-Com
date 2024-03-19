@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { getUserId } from "../../../../../utils/auth";
 import { Button, Col, Modal, Row, Table } from "react-bootstrap";
 import { MdDelete } from "react-icons/md";
+import { apiBasePath } from "../../../../../Redux/config/Config";
 
 function Headeradmin() {
   const dispatch = useDispatch();
@@ -260,7 +261,7 @@ function Headeradmin() {
                   </td>
                   <td>
                     <img
-                      src={`http://localhost:5000/logo/${headings?.logo}`}
+                      src={`${apiBasePath}logo/${headings?.logo}`}
                       alt=""
                       style={{ width: "92px" }}
                     />

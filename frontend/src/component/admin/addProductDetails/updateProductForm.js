@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Col, Row } from "react-bootstrap";
 import { MdCancel } from "react-icons/md";
+import { apiBasePath } from "../../../Redux/config/Config";
 
 function MydModalWithGrid(props) {
   const dispatch = useDispatch();
@@ -243,7 +244,7 @@ function MydModalWithGrid(props) {
                                               src={
                                                 item?.split("https").length > 1
                                                   ? item
-                                                  : `http://localhost:5000/uploads/${item}`
+                                                  : `${apiBasePath}uploads/${item}`
                                               }
                                               alt=""
                                             />
@@ -276,7 +277,7 @@ function MydModalWithGrid(props) {
                             {
                               <img
                                 className="edit_product-img"
-                                src={`http://localhost:5000/uploads/${list?.thumbnail}`}
+                                src={`${apiBasePath}uploads/${list?.thumbnail}`}
                               />
                             }
                           </li>

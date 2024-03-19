@@ -7,6 +7,7 @@ import SubCategoryfilter from "../user/filterbyCategory/subCategoryfilter";
 import { BsFillHeartFill } from "react-icons/bs";
 import { MdScreenSearchDesktop } from "react-icons/md";
 import Spinner from "../user/loader/spinner";
+import { apiBasePath } from "../../Redux/config/Config";
 
 function Searchproduct() {
   const item = useSelector((state) => state?.Searchproduct?.listdata);
@@ -54,7 +55,7 @@ function Searchproduct() {
                                         ? item?.image
                                         : item?.thumbnail.split(":").length > 1
                                         ? item?.thumbnail
-                                        : `http://localhost:5000/uploads/${item.thumbnail}`
+                                        : `${apiBasePath}uploads/${item.thumbnail}`
                                     }
                                   />
                                 </div>

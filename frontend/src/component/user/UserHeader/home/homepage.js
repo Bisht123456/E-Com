@@ -21,6 +21,7 @@ import Scrolltotopbutton from "../../ScoolToTop/scrolltotopbutton";
 import { AllFilterationData } from "../../../../Redux/action/allFilterationAction";
 import { allSubCategoryList } from "../../../../Redux/action/getSubcategoryAction";
 import { typesubcategoryget } from "../../../../Redux/action/typesubcatpost";
+import { apiBasePath } from "../../../../Redux/config/Config";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -257,7 +258,7 @@ const Home = () => {
                                         <div className="pos_catimage">
                                           <img
                                             className="topcatimage_home"
-                                            src={`http://localhost:5000/categoryimg/${data.images}`}
+                                            src={`${apiBasePath}categoryimg/${data.images}`}
                                             alt=""
                                           />
                                         </div>
@@ -436,7 +437,7 @@ const Home = () => {
                                           <div className="pos_catimage">
                                             <img
                                               className="topcatimage_home"
-                                              src={`http://localhost:5000/categoryimg/${data.images}`}
+                                              src={`${apiBasePath}categoryimg/${data.images}`}
                                               alt=""
                                             />
                                           </div>
@@ -506,7 +507,7 @@ const Home = () => {
                               <a href={item?.url}>
                                 <img
                                   className="slide_img"
-                                  src={`http://localhost:5000/slider/${item?.images[0]}`}
+                                  src={`${apiBasePath}slider/${item?.images[0]}`}
                                   alt="Second sslide"
                                 />
                               </a>
@@ -620,7 +621,7 @@ const Home = () => {
                                             : item?.thumbnail?.split(":")
                                                 .length > 1
                                             ? item?.thumbnail
-                                            : `http://localhost:5000/uploads/${item.thumbnail}`
+                                            : `${apiBasePath}uploads/${item.thumbnail}`
                                         }
                                       />
                                     </div>
@@ -740,7 +741,7 @@ const Home = () => {
                                           ? e?.image
                                           : e?.thumbnail?.split(":").length > 1
                                           ? e?.thumbnail
-                                          : `http://localhost:5000/uploads/${e.thumbnail}`
+                                          : `${apiBasePath}uploads/${e.thumbnail}`
                                       }
                                     />
                                   </div>
@@ -856,7 +857,7 @@ const Home = () => {
                                         ? e?.image
                                         : e?.thumbnail?.split(":").length > 1
                                         ? e?.thumbnail
-                                        : `http://localhost:5000/uploads/${e.thumbnail}`
+                                        : `${apiBasePath}uploads/${e.thumbnail}`
                                     }
                                   />
                                 </div>
@@ -908,7 +909,7 @@ const Home = () => {
                                             : e?.thumbnail?.split(":").length >
                                               1
                                             ? e?.thumbnail
-                                            : `http://localhost:5000/uploads/${e.thumbnail}`
+                                            : `${apiBasePath}uploads/${e.thumbnail}`
                                         }
                                       />
                                     </div>
@@ -1014,7 +1015,7 @@ const Home = () => {
                                         ? item?.image
                                         : item?.thumbnail?.split(":").length > 1
                                         ? item?.thumbnail
-                                        : `http://localhost:5000/uploads/${item.thumbnail}`
+                                        : `${apiBasePath}uploads/${item.thumbnail}`
                                     }
                                   />
                                   <div className="cloths_detail">
@@ -1080,7 +1081,7 @@ const Home = () => {
                                         ? item?.image
                                         : item?.thumbnail?.split(":").length > 1
                                         ? item?.thumbnail
-                                        : `http://localhost:5000/uploads/${item.thumbnail}`
+                                        : `${apiBasePath}uploads/${item.thumbnail}`
                                     }
                                     alt=""
                                   />
@@ -1256,7 +1257,7 @@ const Home = () => {
                                             : item?.thumbnail?.split(":")
                                                 .length > 1
                                             ? item?.thumbnail
-                                            : `http://localhost:5000/uploads/${item.thumbnail}`
+                                            : `${apiBasePath}uploads/${item.thumbnail}`
                                         }
                                       />
                                     </div>
@@ -1378,7 +1379,7 @@ const Home = () => {
                                             : item?.thumbnail?.split(":")
                                                 .length > 1
                                             ? item?.thumbnail
-                                            : `http://localhost:5000/uploads/${item.thumbnail}`
+                                            : `${apiBasePath}uploads/${item.thumbnail}`
                                         }
                                       />
                                     </div>
@@ -1473,7 +1474,7 @@ const Home = () => {
                                         ? item?.image
                                         : item?.thumbnail?.split(":").length > 1
                                         ? item?.thumbnail
-                                        : `http://localhost:5000/uploads/${item.thumbnail}`
+                                        : `${apiBasePath}uploads/${item.thumbnail}`
                                     }
                                   />
                                   <div className="cloths_detail">

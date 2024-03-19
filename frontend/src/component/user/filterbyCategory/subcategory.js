@@ -203,7 +203,7 @@
 //                                   ? item?.image
 //                                   : item?.thumbnail?.split(":").length > 1
 //                                   ? item?.thumbnail
-//                                   : `http://localhost:5000/uploads/${item.thumbnail}`
+//                                   : `${apiBasePath}uploads/${item.thumbnail}`
 //                               }
 //                               alt=""
 //                             />
