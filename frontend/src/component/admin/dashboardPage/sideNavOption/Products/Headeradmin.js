@@ -261,7 +261,7 @@ function Headeradmin() {
                   </td>
                   <td>
                     <img
-                      src={`${apiBasePath}logo/${headings?.logo}`}
+                      src={`${apiBasePath}/logo/${headings?.logo}`}
                       alt=""
                       style={{ width: "92px" }}
                     />

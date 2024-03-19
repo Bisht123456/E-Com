@@ -74,7 +74,7 @@ server.use("/api", wishList);
 server.use("/api", headerforuser);
 server.use("/api", sliderRoutes);
 
-// ${apiBasePath}profile
+// ${apiBasePath}/profile
 
 ////25/08
 server.post("/api/Search", async (req, res) => {

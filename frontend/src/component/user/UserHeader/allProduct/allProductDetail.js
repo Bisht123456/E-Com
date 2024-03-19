@@ -197,7 +197,7 @@ const AllProductDetail = () => {
                                         ? e?.image
                                         : e?.thumbnail?.split(":").length > 1
                                         ? e?.thumbnail
-                                        : `${apiBasePath}uploads/${e?.thumbnail}`
+                                        : `${apiBasePath}/uploads/${e?.thumbnail}`
                                     }
                                   />
                                 </div>

@@ -244,7 +244,7 @@ function MydModalWithGrid(props) {
                                               src={
                                                 item?.split("https").length > 1
                                                   ? item
-                                                  : `${apiBasePath}uploads/${item}`
+                                                  : `$/{apiBasePath}/uploads/${item}`
                                               }
                                               alt=""
                                             />
@@ -277,7 +277,7 @@ function MydModalWithGrid(props) {
                             {
                               <img
                                 className="edit_product-img"
-                                src={`${apiBasePath}uploads/${list?.thumbnail}`}
+                                src={`${apiBasePath}/uploads/${list?.thumbnail}`}
                               />
                             }
                           </li>

@@ -27,7 +27,7 @@ import { Afterorder } from "../../../Redux/action/orderSummary";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { cartinfo } from "../../../Redux/action/usercartinfo";
-import { apiBasePath } from "../../../Redux/config/Config";
+import { apiBasePath, uploadBasePath } from "../../../Redux/config/Config";
 
 const Delieverydetail = () => {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -841,7 +841,7 @@ const Delieverydetail = () => {
                                     variant="top"
                                     src={
                                       dData.thumbnail
-                                        ? `${apiBasePath}uploads/${dData.thumbnail}`
+                                        ? `${uploadBasePath}/${dData.thumbnail}`
                                         : ""
                                     }
                                     alt=""
@@ -920,7 +920,7 @@ const Delieverydetail = () => {
                                                     ).length > 1
                                                   ? e?.productDetails[0]
                                                       ?.thumbnail
-                                                  : `${apiBasePath}uploads/${e?.productDetails[0]?.thumbnail}`
+                                                  : `${apiBasePath}/uploads/${e?.productDetails[0]?.thumbnail}`
                                               }
                                               alt=""
                                             />

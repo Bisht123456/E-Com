@@ -302,7 +302,7 @@ const Allcategories = () => {
                               <li className=" productupload_item col-md-3">
                                 <img
                                   className="categorygetimage"
-                                  src={`${apiBasePath}categoryimg/${edit?.images}`}
+                                  src={`${apiBasePath}/categoryimg/${edit?.images}`}
                                   crossOrigin="anonymous"
                                   alt=""
                                 />
@@ -392,7 +392,7 @@ const Allcategories = () => {
                                 <td>
                                   <img
                                     className="tableget_image"
-                                    src={`${apiBasePath}categoryimg/${e?.images}`}
+                                    src={`${apiBasePath}/categoryimg/${e?.images}`}
                                     crossOrigin="anonymous"
                                   />
                                 </td>

@@ -282,7 +282,7 @@ const Sliderpost = () => {
                         <div className="margin_bottom">
                           <img
                             className="slideradmin_View"
-                            src={`${apiBasePath}slider/${edit?.images[0]}`}
+                            src={`${apiBasePath}/slider/${edit?.images[0]}`}
                             alt="Second sslide"
                           />
                         </div>
@@ -329,7 +329,7 @@ const Sliderpost = () => {
                       <div className="margin_bottom">
                         <img
                           className="slideradmin_View"
-                          src={`${apiBasePath}slider/${item?.images[0]}`}
+                          src={`${apiBasePath}/slider/${item?.images[0]}`}
                           alt="Second sslide"
                         />
                       </div>

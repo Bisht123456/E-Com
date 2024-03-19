@@ -209,7 +209,7 @@ const AddToCartProduct = () => {
                                                     ).length > 1
                                                   ? e?.productDetails[0]
                                                       ?.thumbnail
-                                                  : `${apiBasePath}uploads/${e?.productDetails[0]?.thumbnail}`
+                                                  : `${apiBasePath}/uploads/${e?.productDetails[0]?.thumbnail}`
                                               }
                                               alt=""
                                             />

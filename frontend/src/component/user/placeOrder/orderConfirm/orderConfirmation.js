@@ -119,7 +119,7 @@ const OrderConfirmation = () => {
                                 className="customer_detail"
                                 src={
                                   item?.productID[0]?.thumbnail
-                                    ? `${apiBasePath}uploads/${item?.productID[0]?.thumbnail}`
+                                    ? `${apiBasePath}/uploads/${item?.productID[0]?.thumbnail}`
                                     : ""
                                 }
                                 alt=""

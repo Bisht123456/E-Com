@@ -96,7 +96,7 @@ const Wishlistinform = () => {
                                     : item.products[0]?.thumbnail?.split(":")
                                         ?.length > 1
                                     ? item.products[0]?.thumbnail
-                                    : `${apiBasePath}uploads/${item?.products[0]?.thumbnail}`
+                                    : `${apiBasePath}/uploads/${item?.products[0]?.thumbnail}`
                                 }
                                 alt=""
                               />
@@ -118,7 +118,7 @@ const Wishlistinform = () => {
                                     : item.products[0]?.thumbnail?.split(":")
                                         ?.length > 1
                                     ? item.products[0]?.thumbnail
-                                    : `${apiBasePath}uploads/${item?.products[0]?.thumbnail}`
+                                    : `${apiBasePath}/uploads/${item?.products[0]?.thumbnail}`
                                 }
                                 alt=""
                               />
