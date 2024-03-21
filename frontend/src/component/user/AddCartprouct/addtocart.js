@@ -7,16 +7,19 @@ import { cartinfo } from "../../../Redux/action/usercartinfo";
 import { AiOutlinePlus } from "react-icons/ai";
 import { RiDeleteBin6Line, RiSubtractFill } from "react-icons/ri";
 import { SiSpringsecurity } from "react-icons/si";
-import { addToCartAction, removeFromCart,} from "../../../Redux/action/addToCartAction";
+import {
+  addToCartAction,
+  removeFromCart,
+} from "../../../Redux/action/addToCartAction";
 import Modal from "react-bootstrap/Modal";
 import Spinner from "../loader/spinner";
-import { apiBasePath } from "../../../Redux/config/Config";
+import { apiBasePath, uploadBasePath } from "../../../Redux/config/Config";
 
 const AddToCartProduct = () => {
   const navigate = useNavigate();
 
   const [quantity, setQuantity] = useState({});
-  
+
   const [deleteId, setDeleteId] = useState("");
 
   const [deleteState, SetDeleteState] = useState([]);
@@ -209,7 +212,7 @@ const AddToCartProduct = () => {
                                                     ).length > 1
                                                   ? e?.productDetails[0]
                                                       ?.thumbnail
-                                                  : `${apiBasePath}/uploads/${e?.productDetails[0]?.thumbnail}`
+                                                  : `${uploadBasePath}/${e?.productDetails[0]?.thumbnail}`
                                               }
                                               alt=""
                                             />
