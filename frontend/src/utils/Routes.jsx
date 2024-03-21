@@ -42,7 +42,6 @@ import Security from "../component/user/securityDetail/security";
 import Privacy from "../component/user/privacyDetail/privacy";
 import Sliderpost from "../component/admin/dashboardPage/sideNavOption/Products/Sliderpost";
 import Alltypesubcategory from "../component/admin/dashboardPage/sideNavOption/Products/Alltypesubcategory";
-import Payments from "../component/user/placeOrder/startpayment";
 import Customer from "../component/admin/dashboardPage/sideNavOption/customerDetail/customer";
 import ProductSpecification from "../component/admin/addProductDetails/productSpecification";
 import OrderConfirmation from "../component/user/placeOrder/orderConfirm/orderConfirmation";
@@ -92,7 +91,6 @@ const protects = {
         { path: "/termofuse", element: <TermsofuseDetail /> },
         { path: "/paymentsecurity", element: <Security /> },
         { path: "/privacypolicy", element: <Privacy /> },
-        { path: "/payment", element: <Payments /> },
         { path: "/contactus", element: <ContactUs /> },
         { path: "careers", element: <Careers /> },
         { path: "grievanceRedressal", element: <GrievanceRedressal /> },
@@ -170,7 +168,6 @@ const protects = {
         { path: "/termofuse", element: <TermsofuseDetail /> },
         { path: "/paymentsecurity", element: <Security /> },
         { path: "/privacypolicy", element: <Privacy /> },
-        { path: "/payment", element: <Payments /> },
         { path: "/salespage", element: <SliderPages /> },
         { path: "/slidersubcategory", element: <Onlymobile /> },
         { path: "/contactus", element: <ContactUs /> },

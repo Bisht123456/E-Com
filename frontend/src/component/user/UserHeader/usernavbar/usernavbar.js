@@ -1,18 +1,13 @@
 import Button from "react-bootstrap/Button";
-// import Container from "react-bootstrap/Container";
-// import Form from "react-bootstrap/Form";
-// import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Accordion, Col, Image, Row } from "react-bootstrap";
+import { Accordion, Col, Row } from "react-bootstrap";
 import { React, useEffect, useState } from "react";
-import {getProductAction,
-  myCartList
-} from "../../../../Redux/action/getProductDetailAction";
+import {getProductAction, myCartList} from "../../../../Redux/action/getProductDetailAction";
 import { getUserId } from "../../../../utils/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { AiOutlineMail, AiTwotoneHeart } from "react-icons/ai";
+import { AiTwotoneHeart } from "react-icons/ai";
 import { BiLogOut, BiSearch, BiSolidPurchaseTag } from "react-icons/bi";
 import { MdAccountCircle, MdOutlineAccountCircle } from "react-icons/md";
 import { HiOutlineShoppingCart } from "react-icons/hi";
@@ -20,7 +15,6 @@ import { searchAction } from "../../../../Redux/action/searchProductAction";
 import { allCategoryList } from "../../../../Redux/action/getCategoryAction";
 import { cartinfo } from "../../../../Redux/action/usercartinfo";
 import { admingetheading } from "../../../../Redux/action/adminheader";
-import { CiLight } from "react-icons/ci";
 import { AllFilterationData } from "../../../../Redux/action/allFilterationAction";
 import { apiBasePath, logoBasePath } from "../../../../Redux/config/Config";
 
@@ -54,7 +48,6 @@ const Usernavbar = () => {
   const logoutClick = () => {
     localStorage.clear();
     window.location = window.location.origin;
-    // navigate("/");
   };
 
   const filterdata = useSelector(
@@ -64,7 +57,6 @@ const Usernavbar = () => {
   console.log(filterdata, "filterdatafilterdata");
 
   useEffect(() => {
-    // dispatch(filterByCategory());
     if (userData && userData.id) {
       dispatch(cartinfo({ userid: userData.id })).then((res) => {
         console.log("TRIGGERED", res);
@@ -121,8 +113,6 @@ const Usernavbar = () => {
   }, []);
 
   const productClicks = (categoryId) => {
-    console.log(categoryId, "ffffffffffg");
-    // `/category/${subcategoryid}`
     dispatch(AllFilterationData({ categoryId: categoryId }));
   };
 
@@ -137,17 +127,8 @@ const Usernavbar = () => {
                   <div className="intcrt">
                     <p> {header && header.heading}</p>
                   </div>
-                  {/* <div className="intcrt">
-                    <AiOutlineMail />
-                    {header && header.Email}
-                  </div> */}
-                  {/* <i class="fas fa-divide    ">{header && header.sitename}</i> */}
                   <div className="onmobiled-show">
                     <Link to="/" className="card_deco">
-                      {console.log(
-                        header?.logo?.split("-")[1],
-                        "asdasdq234234324"
-                      )}
                       <img
                         src={`${apiBasePath}/logo/${header?.logo}`}
                         alt=""
@@ -159,10 +140,6 @@ const Usernavbar = () => {
                       <div className="navbarhead_prop">
                         <Navbar.Brand>
                           <Link to="/" className="card_deco">
-                            {console.log(
-                              header?.logo?.split("-")[1],
-                              "asdasdq234234324"
-                            )}
                             <img
                               src={`${logoBasePath}/${header?.logo}`}
                               alt=""
@@ -188,42 +165,6 @@ const Usernavbar = () => {
                     </div>
                     <div className="subnewbar_rightcont">
                       <div className="mid_navnewconent desktop_mid_navnewconent">
-                        {/* <div className="Nav_link">
-                          Category
-                          <div className="nav_Filter nav_filterchanges">
-                            <ul>
-                              <Row>
-                                {navcategorydata &&
-                                  navcategorydata?.map((item, index) => {
-                                    const categoryId = item?._id;
-                                    return (
-                                      <Col
-                                        md={6}
-                                        className="navfilter_colalign"
-                                      >
-                                        <Link
-                                          className="navcat_deco"
-                                          // to={`/category/${item?._id}`}
-                                          to={`/category/${categoryId}`}
-                                          onClick={() =>
-                                            productClicks(categoryId)
-                                          }
-                                        >
-                                          <li key={index}>{item?.category}</li>
-                                        </Link>
-                                      </Col>
-                                    );
-                                  })}
-                              </Row>
-                            </ul>
-                          </div>
-                        </div> */}
-                        {/* <Link
-                          className="Nav_link carddecorationnone_cat"
-                          to="/"
-                        >
-                          Home
-                        </Link> */}
                         <Link
                           className="Nav_link carddecorationnone_cat"
                           to="/allproduct"
@@ -304,7 +245,6 @@ const Usernavbar = () => {
                                 onClick={() => SignClick()}
                                 className="sign_hover"
                               >
-                                {/* <AiTwotoneHeart /> */}
                                 Sign In
                               </li>
                             </ul>
@@ -316,7 +256,6 @@ const Usernavbar = () => {
                           <Link to="/addtocart">
                             <HiOutlineShoppingCart className="navbar_new_icon" />
                             <span className="navbar_new_icon_length">
-                              {console.log(myCartL, "TRIGGERED")}
                               {myCartL?.length > 0 ? myCartL?.length : 0}
                             </span>
                           </Link>

@@ -30,14 +30,6 @@ export const findbrandfilter = createAsyncThunk(
   }
 );
 
-// export const findbrandfilter = createAsyncThunk(
-//   "findbrand",
-//   async (payload) => {
-//     const data1 = await axiosInstance.post(`/filtertypebrand`, payload);
-//     return data1.data;
-//   }
-// );
-
 export const removeFromTypeSubcategory = createAsyncThunk(
   "removeFromTypeSubcategory",
   async (payload) => {

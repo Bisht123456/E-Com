@@ -26,7 +26,6 @@ const TrackOrder = () => {
     );
     console.log(orderdatasum, "daa");
   useEffect(() => {
-    // dispatch(allAdminProductList())
     dispatch(
       Getorderdetail({
         userid: idata,
@@ -35,11 +34,9 @@ const TrackOrder = () => {
       })
     );
   }, [currentPage]);
-  //   const handleViewDetails = () => {};
 
   const handleOrder = (e) => {
     console.log(e, "fafdfafadfdas");
-    // navigate(`/orderconfirmation/${e?.productID[0]?._id}`)
   };
 
   return (
@@ -58,7 +55,6 @@ const TrackOrder = () => {
           </tr>
         </thead>
         <tbody>
-          {/* Map through orders array to populate table rows */}
           {orderdatasum &&
             orderdatasum?.map((e, i) => {
               return (

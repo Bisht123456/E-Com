@@ -1,4 +1,3 @@
-// redux/actions/cartActions.js
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { apiBasePath } from "../config/Config";
@@ -10,10 +9,6 @@ export const axiosInstance = axios.create({
   },
 });
 
-// export const addToCart = (product) => ({
-//   type: "ADD_TO_CART",
-//   payload: product,
-// });
 
 export const addToCartAction = createAsyncThunk(
   "addtocart",
@@ -22,11 +17,6 @@ export const addToCartAction = createAsyncThunk(
     return data1.data;
   }
 );
-
-// export const removeFromCart = (productId) => ({
-//   type: "REMOVE_FROM_CART",
-//   payload: productId,
-// });
 
 export const removeFromCart = createAsyncThunk(
   "removeFromCart",

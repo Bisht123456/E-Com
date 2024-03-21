@@ -25,11 +25,6 @@ const Deleteproduct = createSlice({
       );
       state.error = "";
     });
-    // bulider.addCase(deleteProduct.fulfilled, (state, action) => {
-    //   state.isLoading = false;
-    //   state.listdata = action?.payload;
-    //   state.error = "";
-    // });
     bulider.addCase(deleteProduct.rejected, (state, action) => {
       state.error = "";
       state.isLoading = false;

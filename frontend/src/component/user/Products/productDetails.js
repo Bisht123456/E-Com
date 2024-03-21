@@ -165,7 +165,6 @@ const ProductDetails = () => {
                       }}
                     />
                   </div>
-                  <div className="">
                     {productDetail?.images && (
                       <>
                         <div className="subimg-ali-gn">
@@ -189,7 +188,6 @@ const ProductDetails = () => {
                         </div>
                       </>
                     )}
-                  </div>
                   {console.log(productDetail?.stock, "Asdassssssssssssssssss")}
                   <Card.Body>
                     <Card.Text>
@@ -246,7 +244,6 @@ const ProductDetails = () => {
                         ₹{productDetail?.price}{" "}
                         <span>{productDetail?.discountpercentage}%Off</span>
                       </h5>
-                      <div className="underline_discount"></div>
                     </Card.Subtitle>
                     <Card.Subtitle>
                       {productDetail?.stock > 0 ? (
@@ -351,7 +348,6 @@ const ProductDetails = () => {
                               to={`/productdetail/${item?._id}`}
                             >
                               <Card className="shoppingcard_bor">
-                                <div className="">
                                   <Card.Img
                                     variant="top"
                                     src={
@@ -363,7 +359,6 @@ const ProductDetails = () => {
                                     }
                                     alt=""
                                   />
-                                </div>
                                 <Card.Body>
                                   <div className="item_rating">
                                     <p className="homerating_cat">

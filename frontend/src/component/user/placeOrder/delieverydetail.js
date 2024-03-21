@@ -21,7 +21,6 @@ import {
   deleteCartAfterPayment,
   paymentOrder,
 } from "../../../Redux/action/paymentOrderAction";
-// import { options } from "../../../../../api/router/razorpay";
 import useRazorpay from "react-razorpay";
 import { Afterorder } from "../../../Redux/action/orderSummary";
 import { toast } from "react-toastify";
@@ -31,28 +30,19 @@ import { apiBasePath, uploadBasePath } from "../../../Redux/config/Config";
 
 const Delieverydetail = () => {
   const [isFormVisible, setFormVisible] = useState(false);
-  const [showCol, setShowCol] = useState("initial");
-  const [imageState, setImageState] = useState();
   const [activeKey, setactiveKey] = useState(0);
-  const [hidedata, setHidata] = useState("");
   const [razorPaymentId, setRazorPaymentId] = useState("");
   const [qty, setQty] = useState(1);
-  const [numberValue, setNumberValue] = useState("");
-  const [alternateNumberValue, setAlternateNumberValue] = useState("");
   const data = useSelector((state) => state?.deliveraddress?.listdata);
 
-  // const history = useHistory()
   const navigate = useNavigate();
   const userLogin = getUserId();
-  console.log(userLogin, "userLogin");
   const dataId = userLogin.id;
-  console.log(dataId, "dataId");
 
   const { _id } = useParams();
 
   const dispatch = useDispatch();
   const myCartL = useSelector((state) => state?.cartdetails.listdata);
-  console.log(myCartL, "dafdfdsfdas");
 
   const addressdata = useSelector(
     (state) => state?.deliveryaddressget?.listdata?.data
@@ -71,7 +61,6 @@ const Delieverydetail = () => {
 
     return count;
   };
-  console.log(myCartL, "mycartL");
 
   const getTotalDiscount = () => {
     let count = 0;
@@ -81,7 +70,6 @@ const Delieverydetail = () => {
           (currentValue?.productDetails[0]?.discountpercentage / 100) *
           currentValue?.productDetails[0]?.price *
           currentValue?.quantity;
-        console.log(discountprice, "disc");
         return accumulator + discountprice;
       }, 0);
 
@@ -108,7 +96,6 @@ const Delieverydetail = () => {
         userID: dataId,
       })
     ).then((res) => {
-      // console.log(res,'fiwihojel')
       if (res && res.payload && res.payload.success) {
         console.log(res, "fwioenlk");
         setFormVisible(false);
@@ -179,9 +166,6 @@ const Delieverydetail = () => {
   };
 
   const defaultAccord = 1;
-  // console.log(defaultAccord, "aaasmqxs");
-
-  // For radio button
 
   const [selectedAddressType, setSelectedAddressType] = useState("Home");
   const [address, setAddress] = useState(null);
@@ -356,8 +340,7 @@ const Delieverydetail = () => {
               );
               window.location.reload();
             });
-            // history.push("/orderconfirmation")
-            // navigate("/orderconfirmation")
+            
           },
           prefill: {
             name: "Amit",
