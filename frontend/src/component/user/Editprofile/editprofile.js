@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Field, Form } from "react-final-form";
-// import { createprofile } from "../../../Redux/action/profileaction";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserId } from "../../../utils/auth";
 import { getProductAction } from "../../../Redux/action/getProductDetailAction";
@@ -13,7 +12,6 @@ import Spinner from "../loader/spinner";
 const Editprofile = () => {
   const dispatch = useDispatch();
   const [profileimgdata, setProfileimgData] = useState("");
-  const [selectedthumbnalFile, setselectedthumbnalFile] = useState([]);
 
   const loading = useSelector((state) => state?.profileslice?.isLoading);
   const [edit, setEdit] = useState(false);
@@ -21,14 +19,10 @@ const Editprofile = () => {
   const profiledata = useSelector(
     (state) => state?.profileslice?.imageData?.data?.data
   );
-
-
-  console.log(profiledata, "aaaaaaaaaaaaaaaaaaaa");
   const dataId = getUserId();
   const midata = { id: dataId?.id };
   console.log(midata, "dataId");
 
-  useEffect(() => { }, [""]);
 
   const handleEdit = (name) => {
     setEdit(name);
@@ -38,7 +32,6 @@ const Editprofile = () => {
     if (values?.id) {
       formData.append("userData", JSON.stringify(values));
       dispatch(createprofile(formData)).then((res) => {
-        console.log(res, "fwoemkf");
         toast.success("Successfully Edited !", {
           position: toast.POSITION.BOTTOM_CENTER,
         });
@@ -55,7 +48,6 @@ const Editprofile = () => {
       if (values?.id) {
         formData.append("userData", JSON.stringify(values));
         dispatch(createprofile(formData)).then((res) => {
-          console.log(res, "fwoemkf");
           toast.success("Successfully Edited !", {
             position: toast.POSITION.BOTTOM_CENTER,
           });
@@ -166,13 +158,6 @@ const Editprofile = () => {
                       <div>
                         {edit === "name" && (
                           <button
-                            // onClick={() => {
-                            //   handleSave({
-                            //     firstname: values.firstname,
-                            //     lastname: values.lastname,
-                            //     id: values?.id,
-                            //   });
-                            // }}
                             className="personalinfo_button"
                             type="submit"
                           >
@@ -185,7 +170,6 @@ const Editprofile = () => {
                   <Col md={6}>
                     <div className="labelalig_n">
                       <h5>Email Address</h5>
-                      {/* <div>Edit</div> */}
                     </div>
                     <div className="margin_bottom personalotherinput">
                       <Field name="email">
@@ -200,11 +184,6 @@ const Editprofile = () => {
                           </>
                         )}
                       </Field>
-                      {/* <div>
-                      <button className="personalinfo_button" type="submit">
-                        Save
-                      </button>
-                    </div> */}
                     </div>
                   </Col>
                 </form>
@@ -263,12 +242,6 @@ const Editprofile = () => {
                         {edit === "number" && (
                           <button
                             className="personalinfo_button"
-                          // onClick={() => {
-                          //   handleSave({
-                          //     number: values.number,
-                          //     id: values?.id,
-                          //   });
-                          // }}
                           >
                             Save
                           </button>

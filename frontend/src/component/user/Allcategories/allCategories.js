@@ -31,7 +31,6 @@ const AllCategories = () => {
         <div className="slider_col margin_bottom">
           <Row>
             <Col lg={12}>
-              {/* <h2 className="ourtopcategories_home margin_bottom"></h2> */}
               <div className=" margin_bottom">
                 <Row>
                   {allcatgorydata &&

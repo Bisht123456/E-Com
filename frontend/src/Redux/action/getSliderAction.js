@@ -9,13 +9,6 @@ export const axiosInstance = axios.create({
   },
 });
 
-// export const adminGetSlider = createAsyncThunk("usergetslider",
-//   async (payload) => {
-//     const data1 = await axiosInstance.post(`/Getslider`, payload);
-//     return data1.data;
-//   }
-// );
-
 export const adminGetSlider = createAsyncThunk(
   "usergetslider",
   async (payload) => {

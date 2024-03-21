@@ -9,13 +9,6 @@ export const axiosInstance = axios.create({
   },
 });
 
-// export const adminPostProduct = createAsyncThunk("pospadminproduct",
-//   async (payload) => {
-//     const data1 = await axiosInstance.post(`/products`, payload);
-//     return data1.data;
-//   }
-// );
-
 export const adminPostProduct = createAsyncThunk(
   "adminPostProductss",
   async (payload) => {

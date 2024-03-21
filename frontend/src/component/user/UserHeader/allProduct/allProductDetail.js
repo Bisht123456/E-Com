@@ -15,27 +15,18 @@ import {
 } from "../../../../Redux/action/wishlistAction";
 import { getUserId } from "../../../../utils/auth";
 import Scrolltotopbutton from "../../ScoolToTop/scrolltotopbutton";
-import { apiBasePath } from "../../../../Redux/config/Config";
-// import Wishlistmaincomponent from "../../wshlistData/wishlistmaincomponent"
+import { apiBasePath, uploadBasePath } from "../../../../Redux/config/Config";
 
 const AllProductDetail = () => {
   const dispatch = useDispatch();
   const userData = getUserId();
-  console.log(userData, "userData");
 
   const data = useSelector((state) => state?.getproductdata?.listdata);
-  const data1 = useSelector(
-    (state) => state?.getproductdata?.listdata?.products
-  );
+ 
 
-  console.log(data1, "dssssssss");
-  // const productIds = data1 ? data1._id : null;
-  const productIds = data1?._id;
-  console.log(productIds, "asdfgfds");
 
   const loading = useSelector((state) => state?.getproductdata?.isLoading);
 
-  console.log(loading, "loadingss");
 
   const [wishlist, setWishlist] = useState({});
 
@@ -43,16 +34,13 @@ const AllProductDetail = () => {
     (state) => state?.getwishlisdData?.listdata?.data?.data
   );
 
-  console.log(datas, "datasaasss");
 
   useEffect(() => {
     dispatch(getProductAction());
     dispatch(wishlistget({ userId: userData?.id }));
   }, []);
 
-  const productClick = (_id) => {
-    console.log(_id, "hhddhhjjjjjjjjjjj");
-  };
+
 
   const handleWishlistClick = (productId, wishliststatus) => {
     console.log(productId, "sdfghjk");
@@ -141,7 +129,6 @@ const AllProductDetail = () => {
                           <Col lg={3} md={4} className="d-flex">
                             <Card className=" forcatcards_htwd ">
                               <div className="d-flex justify-content-end mt-2 mx-2">
-                                {/* <Wishlistmaincomponent data={e} /> */}
                                 {
                                   isInwishlist ? (
                                     <AiFillHeart
@@ -156,19 +143,6 @@ const AllProductDetail = () => {
                                       }
                                     />
                                   ) : (
-                                    // wishlist[e._id] ? (
-                                    //   <AiFillHeart
-                                    //     style={{
-                                    //       color: "#FF0000", // Change to your desired color
-                                    //       width: "23px",
-                                    //       height: "23px",
-                                    //       cursor: "pointer",
-                                    //     }}
-                                    //     onClick={() =>
-                                    //       handleWishlistClick(e?._id, "delete")
-                                    //     }
-                                    //   />
-                                    // ) : (
                                     <AiOutlineHeart
                                       style={{
                                         color: "#808080",
@@ -187,7 +161,6 @@ const AllProductDetail = () => {
                               <Link
                                 className="card_deco"
                                 to={`/productdetail/${e._id}`}
-                                onClick={() => productClick(e?._id)}
                               >
                                 <div className="">
                                   <Card.Img
@@ -197,7 +170,7 @@ const AllProductDetail = () => {
                                         ? e?.image
                                         : e?.thumbnail?.split(":").length > 1
                                         ? e?.thumbnail
-                                        : `${apiBasePath}/uploads/${e?.thumbnail}`
+                                        : `${uploadBasePath}/${e?.thumbnail}`
                                     }
                                   />
                                 </div>

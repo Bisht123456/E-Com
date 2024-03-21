@@ -14,7 +14,6 @@ import {
 import { selectSubCategoryFilter } from "../../../Redux/action/filterBySubcategory";
 import { selectTypesubcategoryFilter } from "../../../Redux/action/filterByTypeSubcategory";
 import { findbrandfilter } from "../../../Redux/action/typesubcatpost";
-// import { spacificAction } from "../../../Redux/action/productAction";
 import { useNavigate } from "react-router-dom";
 
 const ProductForm = () => {
@@ -26,18 +25,15 @@ const ProductForm = () => {
 
   const [selectedCategoryId, setSelectedCategoryId] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-  console.log(selectedCategory, "dsjhhf");
   const [subcategory, setSubcategory] = useState("");
   const [subcategoryid, setSubcategoryid] = useState("");
   const [brandcategory, setBrandcategory] = useState("");
   const [brand, setbrand] = useState("");
   const [typsubcat, setTypSubcat] = useState("");
   const [typsubcatId, setTypSubcatId] = useState("");
-  console.log(brandcategory, "zzzz");
 
   const [selectedthumbnalFile, setselectedthumbnalFile] = useState([]);
   const [thumbnail, setthumbnail] = useState("");
-  const [subcategorydata, setsubcategorydata] = useState("");
 
   const handlethumbnalfile = (e) => {
     const files = e.target.files;
@@ -146,15 +142,11 @@ const ProductForm = () => {
       type_subcategory_id: values?.typesubcategory,
     };
 
-    // console.log("shar", payload);
     selectedImagesforpost.map((items) => {
       formData.append("images", items);
     });
     formData.append("thumbnail", selectedthumbnalFile);
-    console.log(selectedthumbnalFile, "Sdsdsdsdsdfvsdsvfssvsvs");
     formData.append("userData", JSON.stringify(payload));
-    // console.log(payload, "ggg");
-    console.log(JSON.parse(formData.getAll("userData")), "data");
     dispatch(adminPostProduct(formData)).then((res) => {
       if (res?.payload?.status) {
         formRef.reset();
@@ -168,14 +160,6 @@ const ProductForm = () => {
         resetFileInput("");
         // handleImgeFile("")
       }
-      console.log(res?.payload?.data?.product?._id, "Response");
-      console.log(res?.payload, "respss");
-      // if (res?.payload?.data?.product?._id) {
-      //   navigate(`/productspecification/${res?.payload?.data?.product?._id}`);
-      //   dispatch(
-      //     spacificAction({ ProductID: res?.payload?.data?.product?._id })
-      //   );
-      // }
     });
   };
 
@@ -261,23 +245,7 @@ const ProductForm = () => {
     console.log(selectedLabel, "aaaaaaaaaaaa");
   };
 
-  // const brandChange = (event) => {
-  //   dispatch(findbrandfilter({ brand: event.target.value }));
-  // };
-  //   const selectedId = event.target.value;
-  //   setBrandcategory(selectedId);
-
-  //   const selectedLabel =
-  //     filterbrand.find((i) => i._id === selectedId)?.brand || "";
-  //   setbrand(selectedLabel);
-  //   console.log(event, "saaaaaaaassaas");
-  // };
-  // useEffect(() => {
-  //   let payload = {
-  //     category_id: "",
-  //   };
-  //   dispatch(selectSubCategoryFilter(payload));
-  // }, ["abc"]);
+  
   useEffect(() => {
     console.log(
       selectedCategoryId,
@@ -290,12 +258,7 @@ const ProductForm = () => {
     if (subcategoryid) {
       dispatch(selectBrandFilter({ typesubcategory_id: typsubcatId }));
     }
-    // if (subcategoryid) {
-    //   dispatch(selectTypesubcategoryFilter({ subcategory_id: subcategoryid }));
-    // } else if (selectedCategoryId) {
-    //   // dispatch(selectSubCategoryFilter({ category_id: selectedCategoryId }));
-    // } else {
-    // }
+  
   }, [selectedCategoryId, subcategoryid, brandcategory, typsubcatId]);
 
   console.log(
@@ -318,11 +281,6 @@ const ProductForm = () => {
   };
 
   const brandChange = (e) => {
-    // const selectedBrand = categoryName;
-    // console.log(selectedBrand, "selectedBrandaa");
-    // dispatch(findbrandfilter({ typesubcategory_id: e.target.value }));
-
-    // console.log(e, "zxzxzxzxzxzxzxz");
     dispatch(selectBrandFilter({ type_subcategory_id: e.target.value }));
   };
 
@@ -338,8 +296,6 @@ const ProductForm = () => {
     <>
       <FinalForm
         onSubmit={onSubmit}
-        // validate={validate}
-        // initialValues={initialValues}
         render={({ handleSubmit, values, form }) => {
           formRef = form;
           return (
@@ -400,16 +356,13 @@ const ProductForm = () => {
                               component="select"
                               onChange={(e) => {
                                 input.onChange(e);
-                                // handleChangesubcat(e);
                                 handlesubcategory(e);
-                                // brandChange(e);
                               }}
                             >
                               <option>Select Subcategory</option>
                               {filterdatasubcat &&
                                 filterdatasubcat?.data?.length > 0 &&
                                 filterdatasubcat?.data?.map((e) => {
-                                  console.log(e?.category, "eeeeeeeee");
                                   return (
                                     <>
                                       <option
@@ -476,7 +429,6 @@ const ProductForm = () => {
                               component="select"
                               onChange={(e) => {
                                 input.onChange(e);
-                                // brandChange(e);
                               }}
                             >
                               <option>Select Brand</option>
@@ -599,7 +551,6 @@ const ProductForm = () => {
                         <div>
                           <h3>Price,Stock & Rating</h3>
                         </div>
-                        {/* <span>Has Variations?</span> */}
                       </div>
                       <Row>
                         <Col lg={12}>
@@ -713,7 +664,6 @@ const ProductForm = () => {
               <Button className="addproduct_button margin_bottom" type="submit">
                 Add product
               </Button>
-              {/* <ToastContainer /> */}
             </form>
           );
         }}

@@ -18,12 +18,6 @@ const updateProductData = createSlice({
         state.error = null;
       })
       .addCase(updateProduct.fulfilled, (state, action) => {
-        // state.isLoading = false;
-        // const updatedProduct = action.payload;
-        // state.listdata = state.listdata.map((product) =>
-        //   product._id === updatedProduct._id ? updatedProduct : product
-        // );
-
         state.isLoading = false;
         state.listdata = action?.payload;
         state.error = "";

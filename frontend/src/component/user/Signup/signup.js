@@ -9,30 +9,16 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const data = useSelector((state) => state?.registerdetail?.listdata);
-  console.log(data, "qaa");
 
   const emailExistsError = useSelector((state) => state?.registerdetail?.error);
 
   const onSubmit = async (values) => {
-    console.log(emailExistsError, "aaaajhjh");
-    // if (values.email) {
-    //   values.email === emailExistsError;
-
-    // // }
-    // if (emailExistsError) {
-
-    // } else if () {
-
     dispatch(registerAction(values)).then((res) => {
-      console.log(res, "asdasdasdasdas");
       if (res?.payload?.msg) {
         alert(res?.payload?.msg);
       } else navigate("/signin");
     });
-    // }
   };
-  // navigate("/signin");
   const validates = (values) => {
     const errors = {};
     if (!values.firstname) {
@@ -106,7 +92,6 @@ const SignUp = () => {
                         <Field name="firstname">
                           {({ input, meta }) => (
                             <div className="mb-4 col-lg-6 col-sm-12">
-                              {/* <label>Your name</label> */}
                               <input
                                 className="login_input"
                                 {...input}
@@ -123,7 +108,6 @@ const SignUp = () => {
                         <Field name="lastname">
                           {({ input, meta }) => (
                             <div className="mb-4 col-lg-6 col-sm-12">
-                              {/* <label>Your name</label> */}
                               <input
                                 className="login_input"
                                 {...input}
@@ -141,7 +125,6 @@ const SignUp = () => {
                       <Field name="username">
                         {({ input, meta }) => (
                           <div className="mb-4">
-                            {/* <label>Your name</label> */}
                             <input
                               className="login_input"
                               {...input}
@@ -158,7 +141,6 @@ const SignUp = () => {
                       <Field name="number">
                         {({ input, meta }) => (
                           <div className="mb-4">
-                            {/* <label>Your name</label> */}
                             <input
                               className="login_input"
                               {...input}
@@ -181,7 +163,6 @@ const SignUp = () => {
                       <Field name="email">
                         {({ input, meta }) => (
                           <div className="mb-4">
-                            {/* <label>Email</label> */}
                             <input
                               className="login_input"
                               {...input}
@@ -208,7 +189,6 @@ const SignUp = () => {
                       <Field name="password">
                         {({ input, meta }) => (
                           <div className="mb-4">
-                            {/* <label>Password</label> */}
                             <input
                               className="login_input"
                               {...input}
@@ -232,7 +212,6 @@ const SignUp = () => {
                       <Field name="confirmpassword">
                         {({ input, meta }) => (
                           <div className="mb-4">
-                            {/* <label>Confirm</label> */}
                             <input
                               className="login_input"
                               {...input}

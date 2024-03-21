@@ -6,10 +6,6 @@ export const axiosInstance = axios.create({
   baseURL: apiBasePath,
 });
 
-// export const addcategory = createAsyncThunk("categoryadd", async (payload) => {
-//   const data1 = await axiosInstance.post(`/addcategory`, payload);
-//   return data1.data;
-// });
 
 export const addcategory = createAsyncThunk(
   "addcategory/addcategory",

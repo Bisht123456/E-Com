@@ -2053,6 +2053,7 @@ h5 {
 
 .shoppingcard_bor {
   padding: 10px 20px 0px 20px;
+  cursor: pointer;
 }
 
 .item_rating p {
